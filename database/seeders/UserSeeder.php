@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class RoleSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,15 +14,15 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        $title = ['CEO', 'COO', 'GENERAL MANAGER', 'MANAGER', 'SUPERVISOR-1', 'SUPERVISOR-2', 'STAFF'];
-
-        foreach ($title as $each) {
+        for ($i = 1; $i < 89; $i++) {
             $custom[] = [
-                "title" => $each,
+                "name" => "user$i",
+                "email" => "email$i@test.com",
+                "password" => bcrypt("123456"),
                 "created_at" => now(),
             ];
         }
 
-        DB::table('roles')->insert($custom);
+        DB::table('users')->insert($custom);
     }
 }

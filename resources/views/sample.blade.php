@@ -39,8 +39,15 @@
     let user = document.querySelector ( "#GetAllUser" );
     let type = document.querySelector ( "#GetAllType" );
     let role = document.querySelector ( "#GetAllRole" );
+    let getAllBtn = document.querySelector("#GetAllBtn");
 
-    $ ( "#GetAllBtn" ).click ( function () {
+    user.addEventListener('change', getRoles);
+
+    type.addEventListener('change', getRoles);
+
+    getAllBtn.addEventListener('click', getAll);
+
+    function getAll() {
         let url = location.href + 'get-all';
 
         let data = {
@@ -53,13 +60,9 @@
             let show = document.getElementById ( "GetAllShow" );
             show.textContent = JSON.stringify ( data, null, 2 );
         } )
-    } );
+    }
 
-    user.addEventListener('change', getRoles);
-
-    type.addEventListener('change', getRoles);
-
-    function getRoles (event){
+    function getRoles (){
         let url = location.href + 'get-roles';
         let data = {
             user: user.value,

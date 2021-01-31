@@ -22,4 +22,4 @@ Route::get('/', [UserController::class, 'index']);
 
 Route::get('/get-all', [UserController::class, 'getAll']);
 
-Route::get('/get-roles', [UserController::class, 'getRoles']);
+Route::get('/get-roles', [UserController::class, 'getRolesForUser']);
