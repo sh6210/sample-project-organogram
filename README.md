@@ -60,3 +60,22 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## Projects aim
+
+1. Display parents id or child id
+2. Get parents upto specific roles (use top most node if roles aren't set)
+3. Get children after specific roles (use bottom most node if roles aren't set)
+
+
+## Setup
+
+1. clone the repository
+2. composer install
+3. put the db credentials in .env
+4. run command "php artisan migrate --seed"
+5. go into the projects directory
+6. run command "php artisan serve" and you're done.
+
+Enjoy!!
