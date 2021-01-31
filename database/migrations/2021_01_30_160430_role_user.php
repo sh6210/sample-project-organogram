@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Role;
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,12 +15,9 @@ class RoleUser extends Migration
     {
         Schema::create('role_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Role::class);
-            $table->foreignIdFor(User::class);
-            $table->foreignId('parent_user_id')
-                ->nullable()
-                ->constrained('users')
-                ->onDelete('cascade');
+            $table->foreignId('role_id')->constrained('roles')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('parent_user_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
