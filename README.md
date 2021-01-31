@@ -68,7 +68,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 2. Get parents upto specific roles (use top most node if roles aren't set)
 3. Get children after specific roles (use bottom most node if roles aren't set)
 
-####"For better visualization i've added a image organogram.png"
+#### For better visualization i've added a image organogram.png
 
 ## Setup
 
